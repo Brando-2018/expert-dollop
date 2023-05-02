@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Header and Three Boxes</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 20px;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border: 1px solid #ccc;
+		}
+
+		.box {
+			flex-basis: calc(33.33% - 20px);
+			margin: 10px;
+			padding: 10px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+		}
+
+		.sub-box {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 10px;
+			padding: 10px;
+			background-color: #f2f2f2;
+			border: 1px solid #ccc;
+		}
+
+		.sub-box-item {
+			flex-basis: calc(33.33% - 20px);
+			margin: 5px;
+			padding: 5px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		Header Text
+	</header>
+	<div class="container">
+		<div class="box">
+			<h2>title</h2>
+			<div class="sub-box">
+				<div class="employeeName">Sub Box 1</div>
+				<div class="employeeId">Sub Box 2</div>
+				<div class="employeeEmail">Sub Box 3</div>
+                <div class="employeeGit">Sub Box 4</div>
+			</div>
+		</div>
+		<div class="box">
+			<h2>Box 2</h2>
+			<div class="sub-box">
+				<div class="employeeName">Sub Box 1</div>
+				<div class="employeeId">Sub Box 2</div>
+				<div class="employeeEmail">Sub Box 3</div>
+                <div class="employeeGit">Sub Box 4</div>
+			</div>
+		</div>
+		<div class="box">
+			<h2>Box 3</h2>
+			<div class="sub-box">
+				<div class="employeeName">Sub Box 1</div>
+				<div class="employeeId">Sub Box 2</div>
+				<div class="employeeEmail">Sub Box 3</div>
+                <div class="employeeGit">Sub Box 4</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+function generateManager(manager) {
+	return `
+	  <div class="card">
+		<div class="card-header">
+		  <h5 class="card-title">${manager.name}</h5>
+		  <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
+		</div>
+		<div class="card-body">
+		  <p class="card-text">ID: ${manager.id}</p>
+		  <p class="card-text">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+		  <p class="card-text">Office Number: ${manager.officeNumber}</p>
+		</div>
+	  </div>
+	`;
+  }
